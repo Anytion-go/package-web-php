@@ -5,7 +5,7 @@
 
 # <p align="center">Source code from [package.anytion](https://package.anytion.com/)</p>
 
-package.anytion is the open-source library & template to install on your PHP project
+package.anytion is the open-source library & template repository to install on your PHP project by [control](https://github.com/Arikato111/control)
 
 ## Get started
 
