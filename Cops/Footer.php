@@ -1,7 +1,7 @@
 <?php
 $export = function () {
     return <<<HTML
-        <footer class="flex justify-between">
+        <footer class=" bg-black text-white grid grid-cols-3">
             <div class="p-2">
                 <a class="hover:underline" href="/privacy">privacy</a>
             </div>

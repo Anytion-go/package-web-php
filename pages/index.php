@@ -5,7 +5,7 @@ $Welcome = function () use ($title) {
   $title('LTP for PHP');
   return <<<HTML
     <main class="mx-10 lg:mx-80">
-      <div class="text-center">
+      <div class="text-center mb-[100px]">
         <h1 class="p-3 mt-4 text-2xl sm:text-4xl head">Library and Template for PHP </h1>
         <h5 class="text-lg sm:text-2xl sm:mt-14 mb-3 sm:mb-4">Find Library and Template you need </h5>
       <div class="text-center">
@@ -37,7 +37,7 @@ $Home = function () use ($title, $Welcome) {
   foreach ($data as $pac) {
     $type = $pac['type'] == 1 ? 'library' : 'template';
     $content .= <<<HTML
-    <div class=" border-b border-gray-200 p-3">
+    <div class=" border-b-2 border-black p-3">
         <div class="hover:underline text-2xl "><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
         <div class="m-2 text-sm">
 
@@ -51,7 +51,7 @@ $Home = function () use ($title, $Welcome) {
                 <span class="bg-black border border-black text-white p-1">downloads</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['download']}</span>
             </div>
             <div>
-                <textarea class=" w-full resize-none text-md bg-white" rows="3" disabled>{$pac['descript']}</textarea>
+                <textarea class=" w-full resize-none text-lg bg-slate-100" rows="3" disabled>{$pac['descript']}</textarea>
             </div>
             <div class="my-3">
                 <a href="/{$pac['dev']}">
