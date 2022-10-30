@@ -1,6 +1,14 @@
 <?php
 $title = import('wisit-router/title');
 
+// for make "package-active" class working
+// if have no $void this class is not working
+$void = <<<HTML
+    <div class="package-active"></div>
+HTML;
+// this is notihing
+
+
 $showPackage = function () {
     $db = new DB;
     $content = '';
@@ -19,7 +27,7 @@ $showPackage = function () {
     foreach ($data as $pac) {
         $type = $pac['type'] == 1 ? 'library' : 'template';
         $content .= <<<HTML
-        <div class=" border-b border-gray-200 p-3">
+        <div class=" border-b-2 border-black p-3">
             <div class="hover:underline text-2xl "><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
             <div class="m-2 text-sm">
 
@@ -33,7 +41,7 @@ $showPackage = function () {
                     <span class="bg-black border border-black text-white p-1">downloads</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['download']}</span>
                 </div>
                 <div>
-                    <textarea class=" w-full resize-none text-md bg-slate-100 p-1 rounded" rows="3" disabled>{$pac['descript']}</textarea>
+                    <textarea class=" w-full resize-none text-lg bg-slate-100 p-1 rounded" rows="3" disabled>{$pac['descript']}</textarea>
                 </div>
                 <div class="my-3">
                     <a href="/{$pac['dev']}">

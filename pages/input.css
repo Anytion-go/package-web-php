@@ -20,7 +20,7 @@
     @apply text-center hidden lg:block ;
   }
   .menu-items{
-    @apply  m-2 hover:scale-110 transition-all;
+    @apply  mx-1 my-3 hover:scale-110 transition-all border-2 border-black p-1 rounded-md;
   }
 
   .text-discript{
@@ -28,20 +28,20 @@
   }
 
   .btn-github {
-    @apply btn hover:bg-black hover:text-white my-2;
+    @apply btn bg-black my-2 text-white;
   }
   .img-github {
-    @apply inline-block mx-1 bg-white rounded-full;
+    @apply inline-block mx-1 bg-black rounded-full;
   }
 
   .label-dark {
-    @apply bg-black text-white border-t border-x border-black rounded-t-sm block p-1;
+    @apply bg-black text-white border-t border-x border-black rounded-t-md block p-1;
   }
   .textarea-dark {
-    @apply bg-white border border-black w-full focus:outline-none p-2 mb-4 rounded-b-sm shadow-md;
+    @apply bg-white border border-black w-full focus:outline-none p-2 mb-4 rounded-b-md shadow-md shadow-gray-400;
   }
   .input-dark {
-    @apply p-1 w-full border border-black rounded-b-sm focus:outline-none shadow-md;
+    @apply p-1 w-full border border-black rounded-b-md focus:outline-none shadow-md shadow-gray-400;
   }
   .btn-dark {
     @apply border-2 border-black py-1 px-2 rounded hover:bg-black hover:text-white;
@@ -60,11 +60,11 @@
   }
 
   .sub-menu {
-    @apply hover:text-slate-600 text-black sm:mx-3 my-3 sm:my-0 hover:scale-110 border-b-2 sm:border-none transition-all;
+    @apply hover:text-slate-600 sm:mx-3 my-3 sm:my-0 hover:scale-110 border-b-2 sm:border-none transition-all;
   }
 
   .head {
-    @apply text-2xl m-2 text-center bg-slate-100 py-3 shadow-md;
+    @apply text-2xl m-4 text-center bg-black text-white py-3 rounded shadow-md;
   }
 
   .btn {
@@ -80,10 +80,10 @@
   }
 
   .input-search {
-    @apply bg-gray-100 shadow-sm outline outline-1 outline-slate-400 rounded-md py-2 px-3 text-sm;
+    @apply bg-gray-100 text-black shadow-sm  outline-none rounded-sm py-2 sm:py-1 px-3 text-sm;
   }
   .package-active {
-    @apply cursor-pointer border border-black bg-black text-white  w-1/2;
+    @apply cursor-pointer border border-black bg-black text-white  w-1/2 ;
   }
   .package-unactive {
     @apply cursor-pointer border border-black hover:bg-black hover:text-white w-1/2;

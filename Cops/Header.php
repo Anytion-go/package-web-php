@@ -18,7 +18,7 @@ $Header = function () {
     $ser = $_GET['search'] ?? '';
     $mode = $_GET['mode'] ?? "all";
     return <<<HTML
-        <nav class=" bg-white text-black text-center py-2 px-2 sm:px-10 sm:flex sm:justify-center border-b-2">
+        <nav class=" bg-black text-white text-center py-2 px-2 sm:px-10 sm:flex sm:justify-center border-b-2">
             <div class=" p-0 w-8 inline-block mr-2">
                 <a class="hidden sm:inline" href="/"><img src="/public/logo.png" alt="Logo brand">LTP</a>
                 <span class="sm:hidden" href="#" onclick="switchShow()"><img src="/public/logo.png" alt="Logo brand">LTP</span>
