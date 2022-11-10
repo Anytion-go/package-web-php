@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  main {
+    @apply mb-10;
+  }
+}
+
+@layer components {
+  .package-block {
+    @apply bg-slate-50 text-xs p-2;
+  }
+  .package-name {
+    @apply text-2xl my-2 text-left font-semibold; 
+  }
+
+  .menu-block {
+    @apply text-center hidden lg:block ;
+  }
+  .menu-items{
+    @apply  mx-1 my-3 hover:scale-110 transition-all border-2 border-black p-1 rounded-md;
+  }
+
+  .text-discript{
+    @apply w-full bg-white p-2 resize-none;
+  }
+
+  .btn-github {
+    @apply btn bg-black my-2 text-white;
+  }
+  .img-github {
+    @apply inline-block mx-1 bg-black rounded-full;
+  }
+
+  .label-dark {
+    @apply bg-black text-white border-t border-x border-black rounded-t-md block p-1;
+  }
+  .textarea-dark {
+    @apply bg-white border border-black w-full focus:outline-none p-2 mb-4 rounded-b-md shadow-md shadow-gray-400;
+  }
+  .input-dark {
+    @apply p-1 w-full border border-black rounded-b-md focus:outline-none shadow-md shadow-gray-400;
+  }
+  .btn-dark {
+    @apply border-2 border-black py-1 px-2 rounded hover:bg-black hover:text-white;
+  }
+
+  .key {
+    @apply bg-black border border-black text-white p-1 my-1 inline-block;
+  }
+
+  .value {
+    @apply bg-white border border-black text-black p-1 inline-block;
+  }
+
+  .menu {
+    @apply text-2xl sm:text-lg sm:flex sm:justify-center items-center;
+  }
+
+  .sub-menu {
+    @apply hover:text-slate-600 sm:mx-3 my-3 sm:my-0 hover:scale-110 border-b-2 sm:border-none transition-all;
+  }
+
+  .head {
+    @apply text-2xl m-4 text-center bg-black text-white py-3 rounded shadow-md;
+  }
+
+  .btn {
+    @apply bg-white border border-black p-2 text-sm rounded mx-2;
+  }
+
+  .big-btn {
+    @apply hover:bg-black bg-white hover:text-white text-black border-2 border-black py-3 sm:py-4 px-5 sm:px-20 rounded text-2xl sm:text-4xl;
+  }
+
+  .menu-btn {
+    @apply bg-teal-300 p-2 text-sm mx-2;
+  }
+
+  .input-search {
+    @apply bg-gray-100 text-black shadow-sm  outline-none rounded-sm py-2 sm:py-1 px-3 text-sm;
+  }
+  .package-active {
+    @apply cursor-pointer border border-black bg-black text-white  w-1/2 ;
+  }
+  .package-unactive {
+    @apply cursor-pointer border border-black hover:bg-black hover:text-white w-1/2;
+  }
+}
