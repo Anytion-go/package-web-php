@@ -56,29 +56,29 @@ $export = function () use ($title) {
                     {$error}
                     <form class="form" action="/{$user['name']}" method="post">
                         <input type="hidden" name="edit" value="create">
-                        <div class="mb-2">
+                        <div class="input-box">
                             <label class="label-dark" for="name">name</label>
                             <input class="input-dark" type="text" name="name" value="{$name}" id="" required>
                         </div>
-                        <div class="mb-2">
+                        <div class="input-box">
                             <label class="label-dark" for="description">description</label>
                             <textarea class="textarea-dark" name="descript" id="" rows="5" required>{$descript}</textarea>
                         </div>
-                        <div class="mb-2">
+                        <div class="input-box">
                             <label class="label-dark" for="github">Github link</label>
                             <input class="input-dark" type="text" name="github" value="{$github}" id="" required>
                         </div>
-                        <div class="mb-2">
+                        <div class="input-box">
                             <label class="label-dark" for="urlbranch">Url branch </label>
                             <input class="input-dark" type="text" name="installer" value="$installer" id="" required>
                         </div>
-                        <div class="mb-2">
+                        <div class="input-box">
                             <label class="bg-black text-white p-1 border border-black rounded-l-sm" for="type">type</label><select class="bg-white border border-black p-1  rounded-r-sm" name="type" id="" value="{$type}" required>
                                 <option value="1">library</option>
                                 <option value="2">template</option>
                             </select>
                         </div>
-                        <div class="text-right mb-2">
+                        <div class="text-right">
                             <button class="btn-dark" name="submit">Done</button>
                         </div>
                     </form>

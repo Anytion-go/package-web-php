@@ -1,14 +1,15 @@
 <?php
 $title = import('wisit-router/title');
+$YouAreLogined = import('./Cops/YouAreLogined');
 
-$Login = function () use ($title) {
+$Login = function () use ($title, $YouAreLogined) {
     $title('Login');
 
     $error = '';
     $db = new DB;
 
     if (isset($_GET['logout'])) {
-       $db->Logout();
+        $db->Logout();
     }
 
     if (isset($_POST['submit'])) {
@@ -25,7 +26,7 @@ $Login = function () use ($title) {
         }
     }
 
-    if (isset($_COOKIE['token1'])) return '<main><div align="center">You are now Logined</div></main>';
+    if (isset($_COOKIE['token1'])) return $YouAreLogined();
 
     return <<<HTML
         <main class="mx-1 lg:mx-80">
@@ -33,11 +34,11 @@ $Login = function () use ($title) {
                 <div class="head">Login</div>
                 {$error}
                 <form class="form" action="/login" method="post">
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="username">username</label>
                         <input class="input-dark" type="text" name="username" id="">
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="password">password</label>
                         <input class="input-dark" type="password" name="password" id="">
                     </div>

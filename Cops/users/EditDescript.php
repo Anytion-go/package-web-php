@@ -29,7 +29,7 @@ $EditDescript = function () use ($title) {
                 <div class="head">Edit profile description</div>
                 <form class="form" action="/{$user['name']}" method="post">
                     <input type="hidden" name="edit" value="descript">
-                    <div>
+                    <div class="input-box">
                         <label class="label-dark" for="description">description</label>
                         <textarea class="textarea-dark" name="descript" id="" cols="30" rows="5" required>{$descript}</textarea>
                     </div>

@@ -15,18 +15,17 @@ $export = function () use ($title) {
     }
     foreach($allAccount as $acc){
         $showAccount .= <<<HTML
-        <div class=" border-b-2 border-black p-3">
-            <div class="hover:underline text-2xl "><a href="/{$acc['name']}">{$acc['name']}</a></div>
-
+        <div class="card-form">
+            <div class="card-name"><a href="/{$acc['name']}">{$acc['name']}</a></div>
             <div>
                 <textarea class=" w-full resize-none text-lg bg-slate-100 p-1 rounded"  rows="3" disabled>{$acc['descript']}</textarea>
             </div>
                 
-                <div class="inline-block my-3 text-sm">
-                    <span class="key">followers</span><span class="value">{$acc['follow']}</span>
+                <div class="card-box">
+                    <span class="card-key">followers</span><span class="card-value">{$acc['follow']}</span>
                 </div>
-                <div class="inline-block my-3 text-sm">
-                    <span class="key">date register</span><span class="value">{$acc['date']}</span>
+                <div class="card-box">
+                    <span class="card-key">date register</span><span class="card-value">{$acc['date']}</span>
                 </div>
         </div>
         HTML;
@@ -41,7 +40,7 @@ $export = function () use ($title) {
                 <h1 class="head">Accounts</h1>
                 <div class="m-3 text-center sm:text-right">
                     <form action="/accounts" >
-                        <input class="input-search border border-black rounded-md" type="search" name="q" placeholder="search accounts" value="{$search}">
+                        <input class="input-search border border-slate-500 rounded-md" type="search" name="q" placeholder="search accounts" value="{$search}">
                         <button class="btn-dark">Search</button>
                     </form>
                 </div>

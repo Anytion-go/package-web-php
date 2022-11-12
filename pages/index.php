@@ -37,25 +37,25 @@ $Home = function () use ($title, $Welcome) {
   foreach ($data as $pac) {
     $type = $pac['type'] == 1 ? 'library' : 'template';
     $content .= <<<HTML
-    <div class=" border-b-2 border-black p-3">
-        <div class="hover:underline text-2xl "><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
+    <div class="card-form">
+        <div class="card-name"><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
         <div class="m-2 text-sm">
 
-            <div class="inline-block my-3">
-                <span class="bg-black border border-black text-white p-1">type</span><span class="bg-white text-black p-1 border border-black mr-1">{$type}</span>
+            <div class="card-box">
+                <span class="card-key">type</span><span class="card-value">{$type}</span>
             </div>
-            <div class="inline-block my-3">
-                <span class="bg-black border border-black text-white p-1">last update</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['modif']}</span>
+            <div class="card-box">
+                <span class="card-key">last update</span><span class="card-value">{$pac['modif']}</span>
             </div>
-            <div class="inline-block my-3">
-                <span class="bg-black border border-black text-white p-1">downloads</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['download']}</span>
+            <div class="card-box">
+                <span class="card-key">downloads</span><span class="card-value">{$pac['download']}</span>
             </div>
             <div>
                 <textarea class=" w-full resize-none text-lg bg-slate-100" rows="3" disabled>{$pac['descript']}</textarea>
             </div>
             <div class="my-3">
                 <a href="/{$pac['dev']}">
-                    <span class="bg-black border border-black text-white p-1">Developer</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['dev']}</span>
+                    <span class="card-key hover:bg-black">Developer</span><span class="card-value">{$pac['dev']}</span>
                 </a>
             </div>
 

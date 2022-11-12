@@ -1,7 +1,10 @@
 <?php 
 $title = import('wisit-router/title');
+$YouAreLogined = import('./Cops/YouAreLogined');
 
-$Register = function () use ($title) {
+$Register = function () use ($title, $YouAreLogined) {
+    if (isset($_COOKIE['token1'])) return $YouAreLogined();
+
     $error = '';
     $name = '';
     $username = '';
@@ -42,31 +45,31 @@ $Register = function () use ($title) {
                 <div class="head">Register</div>
                 {$error}
                 <form class="form" action="/register" method="post">
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="name">Name (lowercase)</label>
-                        <input class="input-dark" type="text" name="name" value="{$name}" id="" required>
+                        <input class="input-dark" type="text" maxlength="50" name="name" value="{$name}" id="" required>
                     </div>
-                    <div>
+                    <div class="input-box">
                         <label class="label-dark" for="description">description</label>
-                        <textarea class="textarea-dark" name="descript" id="" cols="30" rows="5" required>{$descript}</textarea>
+                        <textarea class="textarea-dark" name="descript" maxlength="250" id="" cols="30" rows="5" required>{$descript}</textarea>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="username">username</label>
-                        <input class="input-dark" type="text" name="username" value="{$username}" required>
+                        <input class="input-dark" type="text" name="username"  maxlength="50" value="{$username}" required>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="password">password</label>
-                        <input class="input-dark" type="password" name="password" id="" required>
+                        <input class="input-dark" type="password"  maxlength="50" name="password" id="" required>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="question">question</label>
-                        <input class="input-dark" type="text" name="question" value="{$descript}" id="" required>
+                        <input class="input-dark" type="text" name="question"  maxlength="50" value="{$descript}" id="" required>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="answer">answer</label>
-                        <input class="input-dark" type="text" name="answer" value="{$answer}" id="" required>
+                        <input class="input-dark" type="text" name="answer"  maxlength="50" value="{$answer}" id="" required>
                     </div>
-                    <div class="mb-2 text-right">
+                    <div class="input-box text-right">
                         <input class="w-4 h-4 bg-black checked:accent-black" type="checkbox" name="accept" id="" required>Accept all
                     </div>
                     <button

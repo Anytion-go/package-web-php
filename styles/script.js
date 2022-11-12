@@ -30,9 +30,11 @@ function setMode(mode) {
 function checkMode(){
   const valueMode =document.getElementById("mode");
   if(valueMode.value === "library") {
-      document.getElementById("library").className = "package-active";
+      document.getElementById("library").classList.add("package-active");
+      document.getElementById("library").classList.remove("package-unactive");
   } else if(valueMode.value === "template") {
-      document.getElementById("template").className = "package-active";
+      document.getElementById("template").classList.add("package-active");
+      document.getElementById("template").classList.remove("package-unactive");
   }
 }
 checkMode();

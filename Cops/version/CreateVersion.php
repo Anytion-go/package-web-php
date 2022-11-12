@@ -48,7 +48,7 @@ $export = function () use ($title, $getParams) {
                 <form class="form" method="post" action="/package/{$package['name']}">
                     <input type="hidden" name="version" value="create">
                     {$error}
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="version">name version ( only number and - ) Ex. 1-0-0</label>
                         <input class="input-dark" type="text" name="v" value="{$v}" required>
                     </div>
@@ -56,11 +56,11 @@ $export = function () use ($title, $getParams) {
                         <div class="label-dark">Description</div>
                         <textarea class="textarea-dark" name="descript" id="" rows="5" required>{$descript}</textarea>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="github">Github</label>
                         <input class="input-dark" type="text" name="github" value="{$github}" required>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="installer">Url branch</label>
                         <input class="input-dark" type="text" name="installer" value="{$installer}" required>
                     </div>
