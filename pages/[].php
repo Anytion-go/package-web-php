@@ -5,6 +5,7 @@ $EditAccount = import('./Cops/users/EditDescript');
 $Log = import('./Cops/users/Log');
 $CreatePackage = import('./Cops/users/CreatePackage');
 
+$NotFoundPage = import("./pages/_error");
 
 $myPackage = function () use ($getParams) {
     $db = new DB;
@@ -15,34 +16,37 @@ $myPackage = function () use ($getParams) {
     foreach ($data as $pac) {
         $type = $pac['type'] == 1 ? 'library' : 'template';
         $content .= <<<HTML
-        <div class=" border-b-2 border-black p-3">
-            <div class="hover:underline text-2xl "><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
+        <div class="card-form">
+            <div class="card-name"><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
             <div class="m-2 text-sm">
 
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">type</span><span class="bg-white text-black p-1 border border-black mr-1">{$type}</span>
+                <div class="card-box">
+                    <span class="card-key">type</span><span class="card-value">{$type}</span>
                 </div>
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">last update</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['modif']}</span>
+                <div class="card-box">
+                    <span class="card-key">last update</span><span class="card-value">{$pac['modif']}</span>
                 </div>
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">downloads</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['download']}</span>
+                <div class="card-box">
+                    <span class="card-key">downloads</span><span class="card-value">{$pac['download']}</span>
                 </div>
                 <div>
                     <textarea class=" w-full resize-none text-lg bg-white" rows="3" disabled>{$pac['descript']}</textarea>
                 </div>
                 <div class="my-3">
-                        <span class="bg-black border border-black text-white p-1">Developer</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['dev']}</span>
+                        <span class="card-key hover:bg-black">Developer</span><span class="card-value">{$pac['dev']}</span>
                 </div>
 
             </div>
         </div>
         HTML;
     }
+    if(empty($content)) $content = <<<HTML
+    <div class="head-outline">No any package</div>
+    HTML;
     return $content;
 };
 
-$export = function () use ($getParams, $title, $EditAccount, $EditPassword, $Log, $CreatePackage,  $myPackage) {
+$export = function () use ($NotFoundPage, $getParams, $title, $EditAccount, $EditPassword, $Log, $CreatePackage,  $myPackage) {
     if (isset($_POST['edit']) && $_POST['edit'] == 'descript') return $EditAccount();
     if (isset($_POST['edit']) && $_POST['edit'] == 'password') return $EditPassword();
     if (isset($_POST['edit']) && $_POST['edit'] == 'log') return $Log();
@@ -52,7 +56,7 @@ $export = function () use ($getParams, $title, $EditAccount, $EditPassword, $Log
     $db = new DB;
     $user = $db->SearchUser($getParams(0));
     // เช็คว่ามีชื่อผู้ใช้จริงไหม
-    if (!$user) return '<main><div align="center">Not found</div></main>';
+    if (!$user) return $NotFoundPage();
 
     // เปลี่ยน title หลังจากเช็คชื่อผู้ใช้
     $title('Account | ' . $user['name']);
@@ -107,11 +111,7 @@ $export = function () use ($getParams, $title, $EditAccount, $EditPassword, $Log
             }
         }
     } else { // ถ้าไม่เจอ token แปลว่ายังไม่ได้ login
-        $follow = <<<HTML
-                <form  method="get" action="/login">
-                        <button name="follow">Follow</button>
-                </form>
-            HTML;
+        $follow = "";
     }
 
 
@@ -124,14 +124,18 @@ $export = function () use ($getParams, $title, $EditAccount, $EditPassword, $Log
                         {$user['name']} 
                     </div>
 
-                    <span class="key">followers</span><span class="value">{$user['follow']}</span>
-                    <span class="key">date register</span><span class="value">{$user['date']}</span>
+                    <div class="card-box">
+                        <span class="card-key">followers</span><span class="card-value">{$user['follow']}</span>
+                    </div>
+                    <div class="card-box">
+                        <span class="card-key">date register</span><span class="card-value">{$user['date']}</span>
+                    </div>
 
                 </div>
                 <hr>
                 <div >
                     <textarea 
-                        class="text-discript"
+                        class="card-area"
                         disabled
                      cols="10">{$user['descript']}</textarea>
                 </div>

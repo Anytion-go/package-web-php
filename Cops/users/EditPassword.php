@@ -32,11 +32,11 @@ $EditPassword = function () use ($title) {
                 <div class="head">Change password</div>
                 <form class="form" action="/{$user['name']}" method="post">
                     <input type="hidden" name="edit" value="password">
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="old password">old password</label>
                         <input class="input-dark" type="password" name="old" id="" required>
                     </div>
-                    <div class="mb-2">
+                    <div class="input-box">
                         <label class="label-dark" for="new password">new password</label>
                         <input class="input-dark" type="password" name="password" id="" required>
                     </div>

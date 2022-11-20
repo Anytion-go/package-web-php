@@ -14,7 +14,7 @@ $export = function () use ($title) {
         }
     } else {
         $showAccount = <<<HTML
-            <div class="head">Not found any follow</div>
+            <div class="head-outline">Not found any follow</div>
         HTML;
     }
 

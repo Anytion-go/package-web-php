@@ -19,7 +19,7 @@ $showPackage = function () {
         }
         $data = $db->SearchPackage($_GET['search'], $_GET['mode']);
         if (empty($data)) {
-            $content .= '<div class="head bg-white">Not found any package</div>';
+            $content .= '<div class="head-outline">Not found any package</div>';
         }
     } else {
         $data = $db->AllPackage();
@@ -27,25 +27,25 @@ $showPackage = function () {
     foreach ($data as $pac) {
         $type = $pac['type'] == 1 ? 'library' : 'template';
         $content .= <<<HTML
-        <div class=" border-b-2 border-black p-3">
-            <div class="hover:underline text-2xl "><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
+        <div class="card-form">
+            <div class="card-name"><a href="/package/{$pac['name']}">{$pac['name']}</a></div>
             <div class="m-2 text-sm">
 
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">type</span><span class="bg-white text-black p-1 border border-black mr-1">{$type}</span>
+                <div class="card-box">
+                    <span class="card-key">type</span><span class="card-value">{$type}</span>
                 </div>
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">last update</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['modif']}</span>
+                <div class="card-box">
+                    <span class="card-key">last update</span><span class="card-value">{$pac['modif']}</span>
                 </div>
-                <div class="inline-block my-3">
-                    <span class="bg-black border border-black text-white p-1">downloads</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['download']}</span>
+                <div class="card-box">
+                    <span class="card-key">downloads</span><span class="card-value">{$pac['download']}</span>
                 </div>
                 <div>
-                    <textarea class=" w-full resize-none text-lg bg-slate-100 p-1 rounded" rows="3" disabled>{$pac['descript']}</textarea>
+                    <textarea class="card-area" rows="3" disabled>{$pac['descript']}</textarea>
                 </div>
                 <div class="my-3">
                     <a href="/{$pac['dev']}">
-                        <span class="bg-black border border-black text-white p-1">Developer</span><span class="bg-white text-black p-1 border border-black mr-1">{$pac['dev']}</span>
+                        <span class="card-key hover:bg-black">Developer</span><span class="card-value">{$pac['dev']}</span>
                     </a>
                 </div>
 
@@ -70,16 +70,16 @@ $export = function () use ($title, $showPackage) {
     }
     return <<<HTML
         <main class="mx-1 lg:mx-80">
-            <div class="flex text-center my-1">
-                <div onclick="setMode('library')" id="library" class="package-unactive">Library</div>
-                <div onclick="setMode('template')" id="template" class="package-unactive">Template</div>
+            <div class="flex text-center my-3">
+                <div onclick="setMode('library')" id="library" class="package-unactive rounded-l">Library</div>
+                <div onclick="setMode('template')" id="template" class="package-unactive rounded-r">Template</div>
             </div>
             <div>
                 <div class="m-3 text-center sm:hidden">
                     <form action="/package/">
-                        <input class="input-search" type="search" name="search" id="" value="{$ser}">
+                        <input class="input-search border border-black border-opacity-80" type="search" name="search" id="" value="{$ser}">
                         <input type="hidden" name="mode" value="{$mode}" >
-                        <button class="border border-black bg-black text-white p-1 text-lg rounded">search</button>
+                        <button class="border border-black bg-black bg-opacity-80 text-white p-1 text-lg rounded">search</button>
                     </form>
                 </div>
                 <h1 class="head"><a href="/package/">{$titleMode}</a></h1>
