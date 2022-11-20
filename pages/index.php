@@ -5,9 +5,9 @@ $Welcome = function () use ($title) {
   $title('LTP for PHP');
   return <<<HTML
     <main class="mx-10 lg:mx-80">
-      <div class="text-center mb-[100px]">
-        <h1 class="p-3 mt-4 text-2xl sm:text-4xl head">Library and Template for PHP </h1>
-        <h5 class="text-lg sm:text-2xl sm:mt-14 mb-3 sm:mb-4">Find Library and Template you need </h5>
+      <h1 class="p-3 mt-4 text-2xl sm:text-4xl head">Library and Template for PHP </h1>
+      <div class="text-center p-5 border bg-slate-50 border-gray-200 rounded-lg">
+        <h5 class="text-lg sm:text-2xl mb-3 sm:mb-4">Find Library and Template you need </h5>
       <div class="text-center">
         <a href="/package/">
         <button class="big-btn"> <img class="w-12 sm:w-16 inline-block mr-3 bg-white rounded-full p-3" src="/public/folder_icon1.svg" alt="folder-icon"> Packages</button>
@@ -27,7 +27,7 @@ $Welcome = function () use ($title) {
 };
 
 $Home = function () use ($title, $Welcome) {
-  if (!isset($_COOKIE['token1'])|| !isset($_GET['feed'])) return $Welcome();
+  if (!isset($_COOKIE['token1']) || !isset($_GET['feed'])) return $Welcome();
   $db = new DB;
   $user = $db->CheckLogin();
   $db->Feed();
@@ -62,7 +62,7 @@ $Home = function () use ($title, $Welcome) {
         </div>
     </div>
     HTML;
-}
+  }
 
   $title('Home'); // use title function to change title
   return <<<HTML

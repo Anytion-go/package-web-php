@@ -88,7 +88,7 @@
   }
 
   .big-btn {
-    @apply hover:bg-black hover:bg-opacity-80 duration-200 transition-all bg-white hover:text-white text-black border-2 border-black py-3 sm:py-4 px-5 sm:px-20 rounded text-2xl sm:text-4xl;
+    @apply hover:bg-black hover:bg-opacity-80 duration-200 transition-all bg-white hover:text-white text-black border-2 border-black py-2 px-5 sm:px-10 rounded text-2xl sm:text-4xl;
   }
 
   .menu-btn {
