@@ -15,6 +15,7 @@ package.anytion is the open-source library & template repository to install on y
 - move files to root directory project (htdocs/)
 - import `Database.sql` into your database or create a database from the table below.
 - create `.env` and enter connection details on `.env`
+- `npm install` to to install mode_modules
 - `npm run build` to run tailwindcss
 - open [http://localhost](http://localhost) on your browser
 
@@ -23,6 +24,7 @@ package.anytion is the open-source library & template repository to install on y
 - clone this repository
 - import `Database.sql` into your database or create a database from the table below.
 - create `.env` and enter connection details on `.env`
+- `npm install` to to install mode_modules
 - `npm run build` to run tailwindcss
 - `php control serve` 
 - open [http://localhost:3000](http://localhost:3000) on your browser

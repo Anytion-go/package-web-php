@@ -21,12 +21,12 @@ $export = function () use ($title) {
                 <button title="click to copy" class="p-1 border-2 border-black bg-white rounded" id="copy-command" onclick="copyCommand()">copy</button>
             </div>
             <div class="overflow-hidden">
-                <textarea class="resize-none border-2 border-slate-200 p-1 rounded w-full text-sm h-auto my-2" disabled>curl https://raw.githubusercontent.com/Arikato111/control/master/control -O control</textarea>
+                <textarea class="resize-none border-2 border-slate-200 p-1 rounded w-full text-sm h-auto my-2" disabled>curl https://raw.githubusercontent.com/Arikato111/control/master/control -o control</textarea>
             </div>
         </div>
         <script>
             function copyCommand() {
-                navigator.clipboard.writeText(`curl https://raw.githubusercontent.com/Arikato111/control/master/control -O control`);
+                navigator.clipboard.writeText(`curl https://raw.githubusercontent.com/Arikato111/control/master/control -o control`);
                 var btnC = document.getElementById("copy-command")
                 btnC.style.backgroundColor = 'black';
                 btnC.style.color = 'white'
@@ -39,6 +39,10 @@ $export = function () use ($title) {
                 }, 3000);
             }
         </script>
+    
+        <div class="text-center text-lg font-bold bg-slate-200 mt-10 p-2 my-2">Video demonstration of how to use `control`</div>
+        <iframe class="w-full" width="560" height="315" src="https://www.youtube.com/embed/cM5PZXlgfrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
         <div class="card-form">
 
             <div class="text-center text-lg font-bold bg-slate-200 mt-10 p-2 my-2">Install with create file</div>
@@ -71,6 +75,8 @@ $export = function () use ($title) {
                 <button class="btn-github"><img class="img-github" src="/public/github_icon.svg" alt="github logo">Read more about Control</button>
             </a>
         </div>
+
+
     </main>
     HTML;
 };
