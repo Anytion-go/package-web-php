@@ -1,8 +1,8 @@
 <?php
 $title = import('wisit-router/title');
 $getParams = import('wisit-router/getParams');
-$EditVersion = import('./Cops/version/EditVersion');
-$DeleteVersion = import('./Cops/version/DeleteVersion');
+$EditVersion = import('./components/version/EditVersion');
+$DeleteVersion = import('./components/version/DeleteVersion');
 
 $NotFoundPage = import('./pages/_error');
 

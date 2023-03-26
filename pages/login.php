@@ -1,6 +1,6 @@
 <?php
 $title = import('wisit-router/title');
-$YouAreLogined = import('./Cops/YouAreLogined');
+$YouAreLogined = import('./components/YouAreLogined');
 
 $Login = function () use ($title, $YouAreLogined) {
     $title('Login');

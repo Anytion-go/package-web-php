@@ -1,6 +1,6 @@
 <?php 
 $title = import('wisit-router/title');
-$YouAreLogined = import('./Cops/YouAreLogined');
+$YouAreLogined = import('./components/YouAreLogined');
 
 $Register = function () use ($title, $YouAreLogined) {
     if (isset($_COOKIE['token1'])) return $YouAreLogined();
