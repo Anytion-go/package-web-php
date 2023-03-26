@@ -1,6 +1,17 @@
 <?php
 $title = import("wisit-router/title");
-$export = function () use($title) {
+$getParams = import('wisit-router/getParams');
+
+$export = function () use($getParams, $title) {
+    if($getParams(0) == 'install') {
+        header('Content-Type: application/json; charset=utf-8');
+        return json_encode([
+            'statusCode'=> 0,
+            'message'=> 'Error not found'
+        ]);
+        die;
+    };
+
     $title("Not found");
     return <<<HTML
     <main class="mx-1 lg:mx-80">

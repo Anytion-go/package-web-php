@@ -1,9 +1,9 @@
 <?php
 ['getParams' => $getParams, 'title' => $title] = import('wisit-router');
-$EditPassword = import('./Cops/users/EditPassword');
-$EditAccount = import('./Cops/users/EditDescript');
-$Log = import('./Cops/users/Log');
-$CreatePackage = import('./Cops/users/CreatePackage');
+$EditPassword = import('./components/users/EditPassword');
+$EditAccount = import('./components/users/EditDescript');
+$Log = import('./components/users/Log');
+$CreatePackage = import('./components/users/CreatePackage');
 
 $NotFoundPage = import("./pages/_error");
 

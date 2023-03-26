@@ -2,11 +2,11 @@
 ob_start();
 session_start();
 import('dotenv')->config();
+import('./components/Database');
 
-$Header = import('./Cops/Header');
-$Footer = import('./Cops/Footer');
+$Header = import('./components/Header');
+$Footer = import('./components/Footer');
 $getParams = import('wisit-router/getParams');
-import('./Cops/DB');
 
 $export = function ($Component) use ($Header, $Footer, $getParams) {
   if($getParams(0) == 'install') return $Component();

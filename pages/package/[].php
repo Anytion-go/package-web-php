@@ -1,9 +1,9 @@
 <?php
 $title = import('wisit-router/title');
 $getParams = import('wisit-router/getParams');
-$EditPackage = import('./Cops/package/EditPackage');
-$DeletePackage = import('./Cops/package/DeletePackage');
-$CreateVersion = import('./Cops/version/CreateVersion');
+$EditPackage = import('./components/package/EditPackage');
+$DeletePackage = import('./components/package/DeletePackage');
+$CreateVersion = import('./components/version/CreateVersion');
 
 $NotFoundPage = import('./pages/_error');
 
