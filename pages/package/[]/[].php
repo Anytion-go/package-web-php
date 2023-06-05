@@ -42,8 +42,7 @@ $export = function () use ($title, $getParams, $EditVersion, $DeleteVersion, $No
         <div>
                 <div class="package-block">
                     <div class="package-name">
-                        <a class="hover:underline" href="/package/{$package['name']}">{$package['name']} </a>
-                        <span class=" text-rose-600 ">@{$version['version']}</span>
+                        <a class="hover:underline" href="/package/{$package['name']}">{$package['name']}</a><span class=" text-rose-600 ">@{$version['version']}</span>
                     </div>
 
                     <div class="card-box">
