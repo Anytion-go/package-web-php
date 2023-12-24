@@ -3,9 +3,11 @@
 <img align="center" alt="Tailwindcss" height="30" width="40" src="https://github.com/devicons/devicon/raw/master/icons/tailwindcss/tailwindcss-plain.svg">
 </p>
 
-# <p align="center">Source code from [package.anytion](https://package.anytion.com/)</p>
+# <p align="center">package web php [closed]</p>
 
 package.anytion is the open-source library & template repository to install on your PHP project by [control](https://github.com/Arikato111/control)
+
+status: Closed for maintenance, plan for use typescript with nextjs.
 
 ## Get started
 
